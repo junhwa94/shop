@@ -77,6 +77,13 @@
 			<version>3.2.0</version>
 		</dependency>
 
+		<!-- junit 의존성 패키지를 찾지 못하며 빌드가 실패로 인해 디펜던시 추가 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+
 
 
 
