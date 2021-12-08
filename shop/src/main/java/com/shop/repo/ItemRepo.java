@@ -3,12 +3,13 @@ package com.shop.repo;
 import com.shop.entity.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 // 엔티티 타입 클래스 , 두번째는 기본키 타입
-public interface ItemRepo extends JpaRepository<Item, Long>{
+public interface ItemRepo extends JpaRepository<Item, Long>, QuerydslPredicateExecutor<Item> {
 
     List<Item> findByItemNm(String itemNm);
 
