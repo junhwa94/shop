@@ -70,6 +70,15 @@
 			<version>4.3.1</version>
 		</dependency>
 
+		<!--  스프링부트 2.4.2버전 사용으로 인해 maven plugin 오류 발생으로 디펜던시 추가  -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
+
+
 
 	</dependencies>
 
