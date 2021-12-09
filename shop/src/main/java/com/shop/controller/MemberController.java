@@ -22,6 +22,7 @@ public class MemberController {
     private final MemberService memberService;
     private final PasswordEncoder passwordEncoder;
 
+    // 회원가입 페이지
     @GetMapping(value = "/new")
     public String memberForm(Model model){
 
@@ -30,6 +31,7 @@ public class MemberController {
         return "member/memberForm";
     }
 
+    // 회원가입 폼 처리 과정
     @PostMapping(value = "/new")
     public String newMember(@Valid MemberFormDTO memberFormDTO, BindingResult bindingResult, Model model){
 
@@ -42,6 +44,22 @@ public class MemberController {
         }
 
         return "redirect:/";
+    }
+
+    // 로그인
+    @GetMapping(value = "/login")
+    public String loginMember(){
+
+        return "/member/memberLoginForm";
+    }
+
+    // 로그인 실패 시
+    @GetMapping(value = "/login/error")
+    public String loginError(Model model){
+
+        model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요");
+
+        return "/member/memberLoginForm";
     }
 
 }
